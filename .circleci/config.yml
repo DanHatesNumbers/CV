@@ -1,7 +1,7 @@
 jobs:
   build:
     docker:
-      - image: moss/xelatex
+      - image: danhatesnumbers/xelatex
     steps:
       - checkout
       - run:
