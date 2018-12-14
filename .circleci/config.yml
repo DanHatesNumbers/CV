@@ -7,3 +7,5 @@ jobs:
       - run:
           name: Build PDF
           command: make
+      - store_artefacts:
+          path: CV.pdf
