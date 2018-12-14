@@ -4,4 +4,6 @@ jobs:
       - image: moss/xelatex
     steps:
       - checkout
-      - run: make
+      - run:
+          name: Build PDF
+          command: make
