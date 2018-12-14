@@ -27,14 +27,14 @@
 
 \usepackage{fontspec} % For loading fonts
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
+\setmainfont{Ubuntu} % Main document font
 
 \usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
 
 \usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
 
-\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
-% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+\usepackage[margin=0.5in]{geometry}
 
 \usepackage{hyperref} % Required for adding links	and customizing them
 \definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
@@ -43,6 +43,8 @@
 \usepackage{titlesec} % Used to customize the \section command
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\usepackage{longtable} % From http://tex.stackexchange.com/questions/131601/how-shift-a-part-of-the-long-table-to-the-next-page-in-latex
 
 \begin{document}
 
@@ -54,178 +56,99 @@
 %	NAME AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\par{\centering{\Huge John \textsc{Smith}}\bigskip\par} % Your name
+\par{\centering{\Huge Daniel Wright}\bigskip\par} % Your name
 
-\section{Personal Data}
+\section{Personal Info}
 
 \begin{tabular}{rl}
-\textsc{Place and Date of Birth:} & Canada  | 20 November 1987 \\
-\textsc{Address:} & 123 Broadway, City, State, Canada \\
-\textsc{Phone:} & +1 111 1112\\
-\textsc{email:} & \href{mailto:john@smith.com}{john@smith.com}
+Location: & Nottingham \\
+\textsc{Phone:} & 07895 999209\\
+\textsc{Email:} & \href{mailto:danwright91@gmail.com}{danwright91@gmail.com}
 \end{tabular}
 
+%----------------------------------------------------------------------------------------
+%	PERSONAL STATEMENT	
+%----------------------------------------------------------------------------------------
+
+\section{Personal Statement}
+As a final year student at Nottingham Trent University who is on track for a 1st class honours degree
+in Computer Science, I have undertaken a one year industrial placement with ARM as a Software
+Engineer. This placement has allowed me to strengthen my existing technical skills and build new
+ones to solve the challenges I was presented with. I find technical problems to be an enjoyable
+challenge and see them as an opportunity to learn something new. \\
+My eventual career ambition is to work my way into a technical lead role, becoming an expert in the
+field I eventually find myself in, allowing me to impart knowledge to my colleagues and help them
+develop as engineers.
+
+%----------------------------------------------------------------------------------------
+%	Technical Skills
+%----------------------------------------------------------------------------------------
+
+\section{Technical Skills}
+
+\begin{tabular}{l|l|l|l}
+\textit{Languages} & \textit{Frameworks} & \textit{Software} & \textit{Operating Systems} \\
+C\# & WPF & Visual Studio & Windows \\
+Python & ASP.NET MVC \& Web API & Git & Arch Linux \\
+Javascript & jQuery & VirtualBox & \\
+C++ & Xamarin Mobile & VMWare Workstation \& ESXi & \\
+Java & Android SDK & & \\
+SQL & Flask & & \\
+\end{tabular}
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE 
 %----------------------------------------------------------------------------------------
 
 \section{Work Experience}
 
-\begin{tabular}{r|p{11cm}}
-\emph{Current} & 1\textsuperscript{st} year Analyst at \textsc{Lehman Brothers}, London \\
-\textsc{Mar 2012} & \emph{Commodities Structured Trading}\\ 
-& \footnotesize{Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (\textit{ags, oils, precious} and \textit{base metals}), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping.}\\
+\begin{longtable}{r|p{16cm}}
+\emph{Current} & \textbf{Graduate Software Engineer} at Gala Coral Group, Nottingham \\
+May 2014 & \\
+& INSERT JOB DESC HERE \\
 \multicolumn{2}{c}{} \\
 
-%------------------------------------------------
-
-\textsc{Jul 2010-Oct 2011} & Summer Intern at \textsc{Intech Inc}, Chicago \emph{}\\
-& \footnotesize{Received pre-placed offer from the Exotics Trading Desk as a result of very positive review. Rated ``\emph{truly distinctive}'' for Analytical Skills and Teamwork.}\\
+\emph{Jun 2012 -} & \textbf{Software Engineer Industrial Placement} at ARM, Cambridge \\
+Aug 2013 & \\
+& While working at ARM, I was part of a team of engineers embedded in the Marketing Communications department. The majority of my time was spent building technical demonstrations of ARM technologies to showcase a set of marketing requirements. I also staffed demo booths at events that ARM attended, explaining to partners and members of the public what the demonstrations were doing, how they were built and answering any questions they may have. \\
 \multicolumn{2}{c}{} \\
 
-%------------------------------------------------
+\emph{Oct 2011 -} & \textbf{Student Ambassador \& Mentor} at Nottingham Trent University \\
+Jun 2012 & \\
+& My responsibilities in this position included running Drop-In sessions to support other Computing students with work they were finding problematic, representing the University at Open Events and answering any questions prospective students had about University and the Computer Science Department. I also assisted a senior lecturer in delivering first year programming labs. I was invited to take on this role by the University based on my first year grades. \\
 
-\textsc{Jan-Mar 2011} & Computer Technician at \textsc{Buy More}, Burbank \emph{}\\
-& \footnotesize{Worked in the Nerd Herd and helped to solve computer problems by asking customers to turn their computers off and on again.}
-\end{tabular}
+\end{longtable}
+\pagebreak
+\section{Projects}
+\textbf{Social Event Planning Web App for the Elderly} \\
+During the final year of my degree, I built a web application to assist Social Event organisation in Sheltered Accomodation and Care homes for my Advanced Analysis \& Design group coursework. It was developed using the ASP.NET stack with jQuery and the Twitter Bootstrap Frameworks. I was primarily involved with the development of the Business Logic and User Interface and this gave me an opportunity to learn the MVC design pattern and strengthen my skills in User Interface design. \\
+\par
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
+\textbf{C++11 Thread Pool for Parallel Data Processing} \\
+As part of one of my final year degree modules, Advanced Software Engineering, I conducted an investigation into the C++11 Threading library and built a small library for managing a pool of Threads for processing large datasets in parallel. This library included a Concurrency-Safe version of the STL Queue container and constructed a task queue using Lambdas to produce closures that wrapped method calls with the object they were being called on. \\
+\par
+
+\textbf{Highly Concurrent Compute Demo} \\
+During my Industrial Placement at ARM, the main project I was responsible for was building a demonstration of highly concurrent computation on a server platform, initially as a wrapper around an existing piece of software to work in a distributed environment. This evolved to building internal instrumentation of the wrapper, data processing tools for the instrumentation data and a visualisation of the current computation task on Android which was later rebuilt as a web page that updated dynamically. \\
+\par
+
+\textbf{Android Single Device Computing Demo} \\
+Another project I was responsible for while on my Industrial Placement at ARM was to build a demonstration of where ARM believe the future of computing lies. I worte an Android application to detect the state of the Dock connector on a Samsung Galaxy S4 and alter the layout and target DPI of various applications on the phone to provide a better experience when connected to an external screen. \\
+\par
 
 \section{Education}
-
-\begin{tabular}{rl}	
-\textsc{July} 2012 & Master of Commerce in \textsc{Finance}, \textbf{The University of California}, Berkeley\\
-& 110/110 \small\emph{First Class Honours} | Major: Quantitative Finance\\
-& Thesis: ``Money is the Root of All Evil - Or is it?'' | \small Advisor: Prof. James \textsc{Smith}\\
-&\normalsize \textsc{Gpa}: 8.0/9.0\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\
-&\\
-
-%------------------------------------------------
-
-\textsc{July} 2011& Undergraduate Degree in \textsc{}\textsc{Business Studies} \\&110/110 \small\emph{Commerce Specialization}, \normalsize\textbf{The University of California}, Berkeley\\
-& Heavily specialized in mundane paperwork | \small Advisor: Stefano \textsc{Bonini}\\
-&\normalsize \textsc{Gpa}: 7.5/9.0 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\
-&\\
-
-%------------------------------------------------
-
-\textsc{Fall} 2008 & Exchange Semester at \textbf{University of Southern California}, Los Angeles\\
-& \textsc{Gpa}: 8.0/9.0 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\
-&\\
-
-%------------------------------------------------
-
-\textsc{July} 2006& \textbf{Liceo Classico ``E. Duni''}, Matera | Final Grade: 100/100
+\begin{tabular}{r|ll}
+Sept 2010 -& Nottingham Trent University & \\
+May 2014& \textbf{BSc Computer Science} & 1st Class (Hons) \\
+\end{tabular} \\
+\begin{tabular}{r|l}
+Sept 2009 -& City College, Norwich \\
+Jun 2010 & \textbf{AS Levels: }Photography (D), Psychology (D) \\
+\multicolumn{2}{c}{} \\
+Sept 2007 -& The Hewett Sixth Form, Norwich \\
+Jun 2009 & \textbf{BTEC National Award: }Information Technology (Distinction) \\
+& \textbf{A Levels: }Maths (D), Chemistry (D) \\
+\multicolumn{2}{c}{} \\
+Sept 2005 -& The Hewett School, Norwich \\
+Jun 2007 & \textbf{GCSEs: }10 Grades A - C including Maths \& English \\
 \end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	SCHOLARSHIPS AND ADDITIONAL INFO
-%----------------------------------------------------------------------------------------
-
-\section{Scholarships and Certificates}
-
-\begin{tabular}{rl}
-\textsc{Sept.} 2012 & Faculty of Science Masters Scholarship \footnotesize(\$30,000)\normalsize\\
-
-\textsc{June} 2010 & {\textsc{Gmat}\textregistered}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}: 730 (\textsc{q:50;v:39}) 96\textsuperscript{th} percentile; \textsc{awa}: 6.0/6.0 (89\textsuperscript{th} percentile)
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	LANGUAGES
-%----------------------------------------------------------------------------------------
-
-\section{Languages}
-
-\begin{tabular}{rl}
-\textsc{English:} & Fluent\\
-
-\textsc{Italian:} & Mothertongue\\
-
-\textsc{French:} & Basic Knowledge\\
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	COMPUTER SKILLS 
-%----------------------------------------------------------------------------------------
-
-\section{Computer Skills}
-
-\begin{tabular}{rl}
-Basic Knowledge: & \textsc{php}, my\textsc{sql}, \textsc{html}, Access, \textsc{Linux}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}\\
-
-Intermediate Knowledge: & \textsc{vba}, Excel, Word, PowerPoint\\
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	INTERESTS AND ACTIVITIES
-%----------------------------------------------------------------------------------------
-
-\section{Interests and Activities}
-
-Technology, Open-Source, Programming\\
-Paradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
-Football, Travelling
-
-%----------------------------------------------------------------------------------------
-
-\newpage
-
-%----------------------------------------------------------------------------------------
-%	GRADE TABLES
-%----------------------------------------------------------------------------------------
-
-\par{\centering\Large \hypertarget{grds}{Master of Science in \textsc{Finance}}\par}\large{\centering Grades\par}\normalsize
-
-\begin{center}
-\begin{tabular}{lcc}
-\multicolumn{1}{c}{\textsc{Exam}} & \textsc{Grade}&\textsc{Credit Hrs}\\ \hline
-Corporate Finance (Valuation) & 25 & 6\\
-Financial Statement Analysis & 28 & 6\\
-Statistics & 27 & 6\\
-Theory of Finance & 26 & 6\\
-Quantitative Methods for Finance & 30 & 6\\
-Econometrics & 24 & 6\\
-Derivatives & 31 & 6\\
-Management of Financial and Insurance Companies & 30 & 6\\
-Business Law & 31 & 6\\
-Investment Banking	& 28 & 6\\ \\		
-Behavioral Models for Economics and Finance	 & 29 & 6\\
-Numerical Methods for Finance & 29 & 6\\
-Advanced Derivatives & 30 & 6\\
-Fixed Income (Advanced Methods) & 30 & 6\\ \\
-English Language & 30 &	4\\
-French Language & 31 &	4\\	
-Internship & & 8\\		
-Final Thesis & & 20\\	
-& Total & 120\\\cline{2-3}
-&\textsc{Gpa}&\textbf{8.0}
-\end{tabular}
-\end{center}
-\bigskip
-\hrule
-\bigskip
-
-%------------------------------------------------
-
-\bigskip
-
-\par{\centering\Large \hypertarget{grds_usc}{Exchange Program at \textsc{usc}, Los Angeles}\par}\large{\centering Grades\par}\normalsize
-
-\begin{center}
-\begin{tabular}{lcc}
-\multicolumn{1}{c}{\textsc{Exam}} & \textsc{Grade} & \textsc{Grade Points}\\ 
-\hline
-Corporate Financial Strategy & A & 4\\
-Derivatives & A & 4\\
-Money, Credit, and Banking & A & 4\\
-Business Strategy & A- & 3.5\\
-& &\\\cline{2-3}
-& \textsc{Gpa} & \textbf{3.875}
-\end{tabular}
-\end{center}
-
-%----------------------------------------------------------------------------------------
-
 \end{document}
