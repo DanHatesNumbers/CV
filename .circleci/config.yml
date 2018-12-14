@@ -1,0 +1,9 @@
+jobs:
+  build:
+    docker:
+      - image: moss/xelatex
+    steps:
+      - checkout
+      - run:
+          name: Build PDF
+          command: make
