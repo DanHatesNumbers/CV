@@ -1,0 +1,7 @@
+jobs:
+  build:
+    docker:
+      - image: moss/xelatex
+    steps:
+      - checkout
+      - run: make
