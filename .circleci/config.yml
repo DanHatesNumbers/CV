@@ -26,7 +26,7 @@ jobs:
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync ~/project/CV.pdf s3://danhatesnumbers-cv-hosting/CV.pdf
+          command: aws s3 cp ~/project/CV.pdf s3://danhatesnumbers-cv-hosting/CV.pdf --sse
 
 workflows:
   version: 2
