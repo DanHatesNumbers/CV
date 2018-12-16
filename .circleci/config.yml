@@ -1,3 +1,5 @@
+version: 2
+
 jobs:
   build:
     docker:
@@ -9,3 +11,31 @@ jobs:
           command: make
       - store_artifacts:
           path: CV.pdf
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - CV.pdf
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - attach_workspace:
+        at: ~/project
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync ~/project/CV.pdf s3://danhatesnumbers-cv-hosting/CV.pdf
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
