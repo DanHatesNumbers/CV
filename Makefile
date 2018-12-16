@@ -6,7 +6,6 @@ filename=CV.tex
 
 pdf: 
 	xelatex ${filename}
-	xelatex ${filename}
 
 view:
 	while inotifywait --event modify,move_self,close_write ${filename}.tex; \
