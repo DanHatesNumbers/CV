@@ -1,9 +1,11 @@
 jobs:
   build:
     docker:
-      - image: moss/xelatex
+      - image: danhatesnumbers/xelatex
     steps:
       - checkout
       - run:
           name: Build PDF
           command: make
+      - store_artifacts:
+          path: CV.pdf

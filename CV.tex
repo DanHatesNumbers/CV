@@ -26,15 +26,16 @@
 \documentclass[a4paper,10pt]{article} % Default font size and paper size
 
 \usepackage{fontspec} % For loading fonts
+\usepackage{cmbright}
+\usepackage[T1]{fontenc}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin} % Main document font
 
 \usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
 
 \usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
 
-\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
-% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+\usepackage[margin=0.5in]{geometry}
 
 \usepackage{hyperref} % Required for adding links	and customizing them
 \definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
@@ -43,6 +44,8 @@
 \usepackage{titlesec} % Used to customize the \section command
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule] % Text formatting of sections
 \titlespacing{\section}{0pt}{3pt}{3pt} % Spacing around sections
+
+\usepackage{longtable} % From http://tex.stackexchange.com/questions/131601/how-shift-a-part-of-the-long-table-to-the-next-page-in-latex
 
 \begin{document}
 
@@ -54,16 +57,22 @@
 %	NAME AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\par{\centering{\Huge John \textsc{Smith}}\bigskip\par} % Your name
+\par{\centering{\Huge Daniel Murphy}\bigskip\par} % Your name
 
-\section{Personal Data}
+\section{Personal Info}
 
 \begin{tabular}{rl}
-\textsc{Place and Date of Birth:} & Canada  | 20 November 1987 \\
-\textsc{Address:} & 123 Broadway, City, State, Canada \\
-\textsc{Phone:} & +1 111 1112\\
-\textsc{email:} & \href{mailto:john@smith.com}{john@smith.com}
+Location: & Nottingham \\
+\textsc{Phone:} & 07895 999209\\
+\textsc{Email:} & \href{mailto:danhatesnumbers@gmail.com}{danhatesnumbers@gmail.com}
 \end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	PERSONAL STATEMENT	
+%----------------------------------------------------------------------------------------
+
+\section{Personal Statement}
+With a wide range of skills developed through roles in Software Engineering, Quality Engineering and Security Consultancy, I'm a fast learner who can adapt to new environments quickly. I help run the Security Champions program at Capital One and mentor for a Graduate engineer, which is something I find incredibly rewarding.  I'm looking for a role where I can have a real, meaningful impact on the security posture of my company and help protect customers and their data.
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE 
@@ -71,23 +80,65 @@
 
 \section{Work Experience}
 
-\begin{tabular}{r|p{11cm}}
-\emph{Current} & 1\textsuperscript{st} year Analyst at \textsc{Lehman Brothers}, London \\
-\textsc{Mar 2012} & \emph{Commodities Structured Trading}\\ 
-& \footnotesize{Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (\textit{ags, oils, precious} and \textit{base metals}), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping.}\\
+\begin{longtable}{r|p{16cm}}
+
+August 2018 & \textbf{Information Security Consultant} at Capital One, Nottingham \\
+to & \\
+Current & My current role involves advising feature teams on secure development practises, participating in Threat Models, reviewing infrastructure designs for systems being deployed to both our AWS and on-premesis environments and writing self-service guidance and advice. The teams I consult for work on a range of different products and across a wide variety of technologies, which requires me  to effectively juggle competing priorities and cope with frequent context switching. I am also involved in managing our Security Champions program, handling organising sessions, booking speakers and producing short quizes to measure attendee engagement with the training content on the course.\\
 \multicolumn{2}{c}{} \\
 
-%------------------------------------------------
-
-\textsc{Jul 2010-Oct 2011} & Summer Intern at \textsc{Intech Inc}, Chicago \emph{}\\
-& \footnotesize{Received pre-placed offer from the Exotics Trading Desk as a result of very positive review. Rated ``\emph{truly distinctive}'' for Analytical Skills and Teamwork.}\\
+November 2016 & \textbf{Quality Engineer} at Capital One, Nottingham \\
+to & \\
+August 2018 & As a Quality Engineer at Capital One, I helped deliver a project to bring our online account servicing platform in-house. As part of this project I took part in story refinement, defined the approach to testing used by my team, developed automated functional tests and shared this knowledge with the rest of my team to help the team before more cross-functional.This role also gave me the opportunity to try mentoring a graduate, which is something I found very fulfilling and I continue to mentor this person despite moving roles internally. While in this role, Capital One launched it's first iteration of a Security Champions program, which allowed me to start introducing Security to my role. I presented a walkthrough of a Boot2Root VM I had recently completed to this forum, which was well received and inspired another member of the community to investigate Java Deserialisation vulnerabilities and present on the topic.\\
 \multicolumn{2}{c}{} \\
 
-%------------------------------------------------
+May 2014 & \textbf{Graduate Software Engineer} at Gala Coral Group, Nottingham \\
+to & \\
+November 2016 & My role at Gala provided me with an excellent opportunity to work with the Xamarin cross-platform C\# mobile app development framework, building new functionality and resolving technical debt in a suite of line of business iOS apps. I was responsible for moving to a virtualised OS X build infrastructure, using a Mac Mini running VMWare ESXi to provide each developer on the team with their own build host. I have also implemented Continuous Integration builds for a number of existing projects (including mobile apps, web apps and a WPF app) using TeamCity. As part of
+this process of setting up Continuous Integration, I developed a tool that leverages the Swagger API documentation project and the AutoRest program from the Azure team to generate, build and package Portable Class Library compatible API clients from a JSON representation of the API. \\
+\multicolumn{2}{c}{} \\
 
-\textsc{Jan-Mar 2011} & Computer Technician at \textsc{Buy More}, Burbank \emph{}\\
-& \footnotesize{Worked in the Nerd Herd and helped to solve computer problems by asking customers to turn their computers off and on again.}
-\end{tabular}
+June 2012 & \textbf{Software Engineer Industrial Placement} at ARM, Cambridge \\
+to & \\
+August 2013 & While working at ARM, I was part of a team of engineers embedded in the Marketing Communications department. The majority of my time was spent building technical demonstrations of ARM technologies to showcase a set of marketing requirements. I also staffed demo booths at events that ARM attended, explaining to partners and members of the public what the demonstrations were doing, how they were built and answering any questions they may have. \\
+\multicolumn{2}{c}{} \\
+
+\newpage
+
+October 2011 & \textbf{Student Ambassador \& Mentor} at Nottingham Trent University \\
+to & \\
+June 2012 & My responsibilities in this position included running Drop-In sessions to support other Computing students with work they were finding problematic, representing the University at Open Events and answering any questions prospective students had about University and the Computer Science Department. I also assisted a senior lecturer in delivering first year programming labs. I was invited to take on this role by the University based on my first year grades. \\
+
+\end{longtable}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS AND KNOWLEDGE 
+%----------------------------------------------------------------------------------------
+
+\section{Skills \& Knowledge}
+\begin{itemize}
+\item Key Information
+	\begin{itemize}
+		\item Excellent verbal and written communication skills
+		\item Strong researcher and problem solver
+		\item Well developed time-management and work prioritisation skills
+	\end{itemize}
+\item General Information Security
+	\begin{itemize}
+		\item System design reviews
+		\item Cryptography \textemdash good working knowledge of the TLS protocol and how cryptographic primitives such as MACs, Hashes, Signatures and Aymmetric \& Asymmetric ciphers can be applied to meet security objectives
+		\item OWASP Top 10 web vulnerabilities and their mitigations
+		\item Understanding of the OAuth2 and OpenID protocols and their use in delegated authorization scenarios
+		\item Some familiarity with PCI-DSS
+	\end{itemize}
+\item Development \& Automation
+	\begin{itemize}
+		\item Rust, Python, Javascript and C\#
+		\item Some familiarity with the AWS platform and key security controls offered by the platform
+		\item Ansible, Terraform, Vagrant, Packer
+		\item Strong understand of different aspects of software testing
+	\end{itemize}
+\end{itemize}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
@@ -95,137 +146,26 @@
 
 \section{Education}
 
-\begin{tabular}{rl}	
-\textsc{July} 2012 & Master of Commerce in \textsc{Finance}, \textbf{The University of California}, Berkeley\\
-& 110/110 \small\emph{First Class Honours} | Major: Quantitative Finance\\
-& Thesis: ``Money is the Root of All Evil - Or is it?'' | \small Advisor: Prof. James \textsc{Smith}\\
-&\normalsize \textsc{Gpa}: 8.0/9.0\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\
-&\\
+\begin{longtable}{r|p{16cm}}
+September 2010 \textendash May 2014 & \textbf{Nottingham Trent University} \newline
+BSc Computer Science 1st Class (Hons) \\
 
-%------------------------------------------------
+\multicolumn{2}{c}{} \\
 
-\textsc{July} 2011& Undergraduate Degree in \textsc{}\textsc{Business Studies} \\&110/110 \small\emph{Commerce Specialization}, \normalsize\textbf{The University of California}, Berkeley\\
-& Heavily specialized in mundane paperwork | \small Advisor: Stefano \textsc{Bonini}\\
-&\normalsize \textsc{Gpa}: 7.5/9.0 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\
-&\\
+September 2009 \textendash June 2010 & \textbf{City College, Norwich} \newline
+ AS Levels in Photography \& Psychology \\
 
-%------------------------------------------------
+\multicolumn{2}{c}{} \\
 
-\textsc{Fall} 2008 & Exchange Semester at \textbf{University of Southern California}, Los Angeles\\
-& \textsc{Gpa}: 8.0/9.0 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\
-&\\
+September 2007 \textendash June 2009 & \textbf{The Hewett Sixth Form, Norwich} \newline
+BTEC National Award in Information Technology \newline
+A Levels in Maths \& Chemistry \\
 
-%------------------------------------------------
+\multicolumn{2}{c}{} \\
 
-\textsc{July} 2006& \textbf{Liceo Classico ``E. Duni''}, Matera | Final Grade: 100/100
-\end{tabular}
+September 2005 \textendash June 2007 & \textbf{The Hewett School, Norwich} \newline
+10 GCSEs grade A - C including Maths \& English \\
 
-%----------------------------------------------------------------------------------------
-%	SCHOLARSHIPS AND ADDITIONAL INFO
-%----------------------------------------------------------------------------------------
-
-\section{Scholarships and Certificates}
-
-\begin{tabular}{rl}
-\textsc{Sept.} 2012 & Faculty of Science Masters Scholarship \footnotesize(\$30,000)\normalsize\\
-
-\textsc{June} 2010 & {\textsc{Gmat}\textregistered}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}: 730 (\textsc{q:50;v:39}) 96\textsuperscript{th} percentile; \textsc{awa}: 6.0/6.0 (89\textsuperscript{th} percentile)
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	LANGUAGES
-%----------------------------------------------------------------------------------------
-
-\section{Languages}
-
-\begin{tabular}{rl}
-\textsc{English:} & Fluent\\
-
-\textsc{Italian:} & Mothertongue\\
-
-\textsc{French:} & Basic Knowledge\\
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	COMPUTER SKILLS 
-%----------------------------------------------------------------------------------------
-
-\section{Computer Skills}
-
-\begin{tabular}{rl}
-Basic Knowledge: & \textsc{php}, my\textsc{sql}, \textsc{html}, Access, \textsc{Linux}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}\\
-
-Intermediate Knowledge: & \textsc{vba}, Excel, Word, PowerPoint\\
-\end{tabular}
-
-%----------------------------------------------------------------------------------------
-%	INTERESTS AND ACTIVITIES
-%----------------------------------------------------------------------------------------
-
-\section{Interests and Activities}
-
-Technology, Open-Source, Programming\\
-Paradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
-Football, Travelling
-
-%----------------------------------------------------------------------------------------
-
-\newpage
-
-%----------------------------------------------------------------------------------------
-%	GRADE TABLES
-%----------------------------------------------------------------------------------------
-
-\par{\centering\Large \hypertarget{grds}{Master of Science in \textsc{Finance}}\par}\large{\centering Grades\par}\normalsize
-
-\begin{center}
-\begin{tabular}{lcc}
-\multicolumn{1}{c}{\textsc{Exam}} & \textsc{Grade}&\textsc{Credit Hrs}\\ \hline
-Corporate Finance (Valuation) & 25 & 6\\
-Financial Statement Analysis & 28 & 6\\
-Statistics & 27 & 6\\
-Theory of Finance & 26 & 6\\
-Quantitative Methods for Finance & 30 & 6\\
-Econometrics & 24 & 6\\
-Derivatives & 31 & 6\\
-Management of Financial and Insurance Companies & 30 & 6\\
-Business Law & 31 & 6\\
-Investment Banking	& 28 & 6\\ \\		
-Behavioral Models for Economics and Finance	 & 29 & 6\\
-Numerical Methods for Finance & 29 & 6\\
-Advanced Derivatives & 30 & 6\\
-Fixed Income (Advanced Methods) & 30 & 6\\ \\
-English Language & 30 &	4\\
-French Language & 31 &	4\\	
-Internship & & 8\\		
-Final Thesis & & 20\\	
-& Total & 120\\\cline{2-3}
-&\textsc{Gpa}&\textbf{8.0}
-\end{tabular}
-\end{center}
-\bigskip
-\hrule
-\bigskip
-
-%------------------------------------------------
-
-\bigskip
-
-\par{\centering\Large \hypertarget{grds_usc}{Exchange Program at \textsc{usc}, Los Angeles}\par}\large{\centering Grades\par}\normalsize
-
-\begin{center}
-\begin{tabular}{lcc}
-\multicolumn{1}{c}{\textsc{Exam}} & \textsc{Grade} & \textsc{Grade Points}\\ 
-\hline
-Corporate Financial Strategy & A & 4\\
-Derivatives & A & 4\\
-Money, Credit, and Banking & A & 4\\
-Business Strategy & A- & 3.5\\
-& &\\\cline{2-3}
-& \textsc{Gpa} & \textbf{3.875}
-\end{tabular}
-\end{center}
-
-%----------------------------------------------------------------------------------------
+\end{longtable}
 
 \end{document}
