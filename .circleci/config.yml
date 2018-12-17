@@ -27,6 +27,9 @@ jobs:
       - run:
           name: Deploy to S3
           command: aws s3 cp ~/project/CV.pdf s3://danhatesnumbers-cv-hosting/CV.pdf --sse
+      - run:
+          name: Invalidate CloudFront Cache
+          command: aws cloudfront create-invalidation --distribution-id $CV_CF_ID
 
 workflows:
   version: 2
